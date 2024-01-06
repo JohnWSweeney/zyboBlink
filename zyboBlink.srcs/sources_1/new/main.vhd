@@ -23,35 +23,42 @@ USE IEEE.NUMERIC_STD.ALL;
 
 entity main is
 	Port(
-		sysclk	: in std_logic;
-		je		: out std_logic_vector(7 downto 0);
-		o_led	: out std_logic
+		sysclk			: in std_logic;
+		pmodStandard	: out std_logic_vector(7 downto 0);
+		led				: out std_logic_vector(3 downto 0)
 		);
 end main;
 
 architecture Behavioral of main is
 
-signal	clk	: std_logic;
-signal	led	: std_logic;
-signal	cnt	: unsigned(7 downto 0):= (others => '0');
-signal	state	: integer range 0 to 125000000:= 0;
+signal	w_clk	: std_logic;
+signal	w_rate1	: std_logic;
+signal	w_rate2	: std_logic;
+signal	w_count	: unsigned(7 downto 0):= (others => '0');
+signal	w_state	: integer range 0 to 125000000:= 0;
 
 begin
 
-clk	<= sysclk;
-je <= std_logic_vector(cnt);
-o_led	<= led;
+w_clk 			<= sysclk;
+pmodStandard	<= std_logic_vector(w_count);
+led(0)			<= w_rate1;
+led(1)			<= not w_rate1;
+led(2)			<= w_rate2;
+led(3)			<= not w_rate2;
 
-process(clk)
+process(w_clk)
 begin
-	if rising_edge(clk) then
-		case state is
+	if rising_edge(w_clk) then
+		case w_state is
+			when 1250000 =>
+				w_rate2 <= not w_rate2;
+				w_state <= w_state + 1;
 			when 12500000 =>
-				led <= not led;
-				cnt <= cnt + 1;
-				state <= 0;
+				w_rate1 <= not w_rate1;
+				w_count <= w_count + 1;
+				w_state <= 0;
 			when others =>
-				state <= state + 1;
+				w_state <= w_state + 1;
 		end case;
 	end if;
 end process;
