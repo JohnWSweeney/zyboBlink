@@ -1,0 +1,22 @@
+# x
+*.wdf
+*.rst
+*.xml
+*.js
+*.txt
+*.pb
+*.tcl
+*.bat
+*.xpr
+*.wpc
+*.lpr
+*.sh
+*.log
+*.rpt
+*.rpx
+*.dcp
+*.vdi
+*.jou
+*.vds
+zyboBlink.runs/synth_1/__synthesis_is_complete__
+zyboBlink.runs/synth_1/.Xil/main_propImpl.xdc
