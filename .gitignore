@@ -3,7 +3,6 @@
 *.rst
 *.xml
 *.js
-*.txt
 *.pb
 *.tcl
 *.bat
@@ -20,3 +19,6 @@
 *.vds
 zyboBlink.runs/synth_1/__synthesis_is_complete__
 zyboBlink.runs/synth_1/.Xil/main_propImpl.xdc
+zyboBlink.runs/impl_1/clockInfo.txt
+zyboBlink.runs/impl_1/htr.txt
+zyboBlink.runs/synth_1/htr.txt
