@@ -1,26 +1,26 @@
-# x
-# *.wdf
-# *.rst
-# *.xml
-# *.js
-# *.pb
-# *.tcl
-# *.bat
-# *.xpr
-# *.wpc
-# *.lpr
-# *.sh
-# *.log
-# *.rpt
-# *.rpx
-# *.dcp
-# *.vdi
-# *.jou
-# *.vds
-# zyboBlink.runs/synth_1/__synthesis_is_complete__
-# zyboBlink.runs/synth_1/.Xil/main_propImpl.xdc
-# zyboBlink.runs/impl_1/clockInfo.txt
-# zyboBlink.runs/impl_1/htr.txt
-# zyboBlink.runs/synth_1/htr.txt
+# File types
+*.xpr
+*.wpc
+*.wdf
+*.xml
+*.rst
+*.txt
+*.lpr
+*.js
+*.sh
+*.pb
+*.rpt
+*.rpx
+*.dcp
+*.tcl
+*.bat
+*.dcp
+*.log
+*.vdi
+*.jou
+*.vds
+*.editorconfig
 
-/*
+# Folders
+zyboBlink.runs/synth_1/__synthesis_is_complete__
+zyboBlink.runs/synth_1/.Xil/main_propImpl.xdc
